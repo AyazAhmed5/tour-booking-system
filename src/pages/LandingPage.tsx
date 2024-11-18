@@ -3,6 +3,7 @@ import Defaultbutton from "../components/DeaultButton";
 import image1 from "../assets/image1.svg";
 import image2 from "../assets/image2.svg";
 import image3 from "../assets/image3.svg";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -18,13 +19,15 @@ const LandingPage = () => {
           and make your tour a stupendous memory.
         </Typography>
 
-        <Defaultbutton
-          buttonCaption="Explore Now"
-          buttonWidth="155px"
-          buttonHeight="54px"
-        />
+        <Link to={"/explore-tour"}>
+          <Defaultbutton
+            buttonCaption="Explore Now"
+            buttonWidth="155px"
+            buttonHeight="54px"
+          />
+        </Link>
       </Box>
-      <Box
+      {/* <Box
         className="landing-page-right-container"
         sx={{
           position: "relative",
@@ -69,7 +72,7 @@ const LandingPage = () => {
             sx={{ width: "331px", height: "266px" }}
           />
         </Box>
-      </Box>
+      </Box> */}
     </div>
   );
 };
