@@ -1,0 +1,66 @@
+.explore-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.middle-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30% 10%;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 139px;
+  position: absolute;
+  bottom: 40%;
+  border-radius: 12px !important;
+}
+
+.middle-container-text {
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  line-height: 30px !important;
+  width: 100% !important;
+}
+.middle-secondary-text {
+  color: #999999;
+  margin-left: 40px !important;
+}
+
+.button-search {
+  width: 54px;
+  height: 95px;
+  border-radius: 15px !important;
+  background-color: #f16b51 !important;
+}
+.price-range {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  bottom: 13%;
+}
+
+.chip-design {
+  border: 1px solid #e1e1e1 !important;
+  border-radius: 12px !important;
+  min-height: 50px;
+  font-size: 20px !important;
+}
+
+.icon-outer-container {
+  height: 32px;
+  width: 40px;
+  display: flex;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  align-items: center;
+  justify-content: center;
+}

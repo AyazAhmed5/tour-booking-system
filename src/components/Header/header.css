@@ -1,0 +1,18 @@
+.logo-header {
+  width: 85px;
+  height: 25px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 50px;
+}
+
+.header-inner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+}
