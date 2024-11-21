@@ -24,7 +24,11 @@ const Defaultbutton = ({
         height: buttonHeight,
         borderRadius: "12px",
         padding: 0,
-        visibility: route === "/explore-tour" ? "hidden" : "",
+        visibility: route !== "/" ? "hidden" : "",
+        textTransform: "none",
+        "&:hover": {
+          backgroundColor: "#e55347",
+        },
       }}
     >
       {buttonCaption ?? ""}

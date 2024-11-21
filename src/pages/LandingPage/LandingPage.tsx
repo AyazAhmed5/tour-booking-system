@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import Defaultbutton from "../../components/DefaultButton/DefaultButton";
 import { Link } from "react-router-dom";
+import image1 from "../../assets/image-1.svg";
+import image2 from "../../assets/image-2.svg";
+import image3 from "../../assets/image-3.svg";
 import "./LandingPage.css";
 const LandingPage = () => {
   return (
@@ -21,28 +24,31 @@ const LandingPage = () => {
             buttonCaption="Explore Now"
             buttonWidth="155px"
             buttonHeight="54px"
+            route="/"
           />
         </Link>
       </Box>
-      {/* <Box
+      <Box
         className="landing-page-right-container"
         sx={{
           position: "relative",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: "50%",
+          width: "60%",
         }}
       >
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gridTemplateRows: "1fr 1fr",
-            width: "100%",
-            height: "auto",
+            gridTemplateColumns: "40% 40%",
+            gridTemplateRows: "1fr",
+            gap: "20px",
             position: "absolute",
             bottom: "20px",
+            height: "auto",
+            width: "100%",
+            justifyContent: "end",
           }}
         >
           <Box
@@ -50,26 +56,14 @@ const LandingPage = () => {
             src={image1}
             alt="Image 1"
             sx={{
-              width: "300px",
-              height: "556px",
               gridRow: "1 / span 2",
               objectFit: "cover",
             }}
           />
-          <Box
-            component="img"
-            src={image2}
-            alt="Image 2"
-            sx={{ width: "330px", height: "266px" }}
-          />
-          <Box
-            component="img"
-            src={image3}
-            alt="Image 3"
-            sx={{ width: "331px", height: "266px" }}
-          />
+          <Box component="img" src={image2} alt="Image 2" />
+          <Box component="img" src={image3} alt="Image 3" />
         </Box>
-      </Box> */}
+      </Box>
     </div>
   );
 };

@@ -1,3 +1,22 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
+.truncate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-height: 1.5;
+}
+
+.icon-outer-container {
+  height: 32px;
+  width: 40px;
+  display: flex;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  align-items: center;
+  justify-content: center;
+}

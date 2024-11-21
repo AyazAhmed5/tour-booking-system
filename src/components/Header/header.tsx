@@ -14,24 +14,6 @@ const Header = () => {
 
       <Box className="header-inner-container">
         <Link
-          to={"/explore-tour"}
-          style={{ textDecoration: "none", color: "inherit" }}
-        >
-          <Typography
-            className="cursor-pointer"
-            sx={{
-              fontWeight: 500,
-              fontSize: "18px",
-              borderBottom:
-                location.pathname === "/explore-tour"
-                  ? "2px solid #F16B51"
-                  : "",
-            }}
-          >
-            Add Tour
-          </Typography>
-        </Link>
-        <Link
           to={"/tours"}
           style={{ textDecoration: "none", color: "inherit" }}
         >
@@ -47,6 +29,23 @@ const Header = () => {
             Tours
           </Typography>
         </Link>
+        <Link
+          to={"/add-tour"}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <Typography
+            className="cursor-pointer"
+            sx={{
+              fontWeight: 500,
+              fontSize: "18px",
+              borderBottom:
+                location.pathname === "/add-tour" ? "2px solid #F16B51" : "",
+            }}
+          >
+            Add Tour
+          </Typography>
+        </Link>
+
         <Link
           to={"/my-tours"}
           style={{ textDecoration: "none", color: "inherit" }}

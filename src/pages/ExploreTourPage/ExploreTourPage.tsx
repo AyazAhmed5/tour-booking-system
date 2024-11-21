@@ -5,6 +5,7 @@ import searchIcon from "../../assets/search-icon.svg";
 import locationIcon from "../../assets/location-icon.svg";
 import calendarIcon from "../../assets/calendar-icon.svg";
 import priceIcon from "../../assets/price-icon.svg";
+import { DateRangePicker } from "rsuite";
 
 const ExploreTourPage = () => {
   const popularDestinations = [
@@ -102,7 +103,7 @@ const ExploreTourPage = () => {
               Choose Date
             </Typography>
           </Box>
-          <Typography className="middle-secondary-text">Choose here</Typography>
+          <DateRangePicker placeholder="Select Date Range" />
         </Box>
         <Box
           sx={{
