@@ -1,4 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { useState } from "react";
+import { Box, IconButton, Drawer, List, ListItem } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import logo from "../../assets/Logo.svg";
 import Defaultbutton from "../DefaultButton/DefaultButton";
 import { Link, useLocation } from "react-router-dom";
@@ -6,6 +9,12 @@ import "./header.css";
 
 const Header = () => {
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="header-container">
       <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
@@ -15,56 +24,32 @@ const Header = () => {
       <Box className="header-inner-container">
         <Link
           to={"/tours"}
-          style={{ textDecoration: "none", color: "inherit" }}
+          className={`menu-link ${
+            location.pathname === "/tours" ? "active" : ""
+          }`}
         >
-          <Typography
-            className="cursor-pointer"
-            sx={{
-              fontWeight: 500,
-              fontSize: "18px",
-              borderBottom:
-                location.pathname === "/tours" ? "2px solid #F16B51" : "",
-            }}
-          >
-            Tours
-          </Typography>
+          Tours
         </Link>
         <Link
           to={"/add-tour"}
-          style={{ textDecoration: "none", color: "inherit" }}
+          className={`menu-link ${
+            location.pathname === "/add-tour" ? "active" : ""
+          }`}
         >
-          <Typography
-            className="cursor-pointer"
-            sx={{
-              fontWeight: 500,
-              fontSize: "18px",
-              borderBottom:
-                location.pathname === "/add-tour" ? "2px solid #F16B51" : "",
-            }}
-          >
-            Add Tour
-          </Typography>
+          Add Tour
         </Link>
-
         <Link
           to={"/my-tours"}
-          style={{ textDecoration: "none", color: "inherit" }}
+          className={`menu-link ${
+            location.pathname === "/my-tours" ? "active" : ""
+          }`}
         >
-          <Typography
-            className="cursor-pointer"
-            sx={{
-              fontWeight: 500,
-              fontSize: "18px",
-              borderBottom:
-                location.pathname === "/my-tours" ? "2px solid #F16B51" : "",
-            }}
-          >
-            My Tours
-          </Typography>
+          My Tours
         </Link>
       </Box>
 
-      <Link to={"/explore-tour"}>
+      {/* Explore Button */}
+      <Link to={"/explore-tour"} className="explore-button-link">
         <Defaultbutton
           buttonCaption="Explore Now"
           buttonWidth="155px"
@@ -72,6 +57,75 @@ const Header = () => {
           route={location.pathname}
         />
       </Link>
+
+      {/* Hamburger Icon */}
+      <IconButton
+        edge="end"
+        className="hamburger-icon"
+        onClick={toggleMenu}
+        aria-label="menu"
+      >
+        <MenuIcon />
+      </IconButton>
+
+      {/* Mobile Drawer */}
+      <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu}>
+        <Box className="drawer-container">
+          <IconButton
+            edge="end"
+            className="close-icon"
+            onClick={toggleMenu}
+            aria-label="close"
+          >
+            <CloseIcon />
+          </IconButton>
+          <List>
+            <ListItem>
+              <Link
+                to={"/tours"}
+                className={`menu-link ${
+                  location.pathname === "/tours" ? "active" : ""
+                }`}
+                onClick={toggleMenu}
+              >
+                Tours
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                to={"/add-tour"}
+                className={`menu-link ${
+                  location.pathname === "/add-tour" ? "active" : ""
+                }`}
+                onClick={toggleMenu}
+              >
+                Add Tour
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                to={"/my-tours"}
+                className={`menu-link ${
+                  location.pathname === "/my-tours" ? "active" : ""
+                }`}
+                onClick={toggleMenu}
+              >
+                My Tours
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link to={"/explore-tour"} onClick={toggleMenu}>
+                <Defaultbutton
+                  buttonCaption="Explore Now"
+                  buttonWidth="155px"
+                  buttonHeight="54px"
+                  route={location.pathname}
+                />
+              </Link>
+            </ListItem>
+          </List>
+        </Box>
+      </Drawer>
     </div>
   );
 };

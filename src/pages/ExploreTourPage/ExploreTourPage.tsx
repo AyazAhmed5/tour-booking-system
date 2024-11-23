@@ -167,7 +167,7 @@ const ExploreTourPage = () => {
           useFlexGap
           sx={{
             flexWrap: "wrap",
-            justifyContent: "",
+            justifyContent: "center",
             width: "60%",
           }}
         >

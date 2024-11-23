@@ -16,3 +16,48 @@
   justify-content: space-between;
   width: 400px;
 }
+
+.menu-link {
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.menu-link.active {
+  border-bottom: 2px solid #f16b51;
+}
+
+.explore-button-link {
+  visibility: visible !important;
+}
+
+.hamburger-icon {
+  display: none !important;
+}
+
+.drawer-container {
+  width: 250px;
+  padding: 16px;
+}
+
+.close-icon {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .header-inner-container {
+    display: none;
+  }
+
+  .explore-button-link {
+    visibility: hidden !important;
+  }
+  .hamburger-icon {
+    display: block !important;
+  }
+}

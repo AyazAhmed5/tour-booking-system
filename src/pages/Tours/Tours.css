@@ -30,6 +30,14 @@
   flex-direction: column;
   overflow: hidden;
 }
+.complete-card-container:hover .buttons-icon {
+  display: flex;
+  transition: all 5.3s ease;
+}
+.complete-card-container:hover .price-duration {
+  display: none;
+  transition: all 5.3s ease;
+}
 
 .image {
   width: 100%;
@@ -37,4 +45,24 @@
 }
 .image-container {
   width: 100%;
+}
+.buttons-icon {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+}
+
+.price-duration {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75%;
+  height: 60px;
+}
+.delete-icon {
+  width: 36px;
+  height: 37px;
+  align-self: center;
 }

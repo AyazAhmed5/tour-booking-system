@@ -1,7 +1,12 @@
 import { Box, Paper, Typography } from "@mui/material";
 import "./Tours.css";
 import priceIcon from "../../assets/price-icon.svg";
+import DeleteIcon from "../../assets/delete icon.png";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import Defaultbutton from "../../components/DefaultButton/DefaultButton";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import DeleteConfirmationModal from "../../components/Modal/Delete-confirmation-modal";
 interface TourCardProps {
   id: string;
   tourLocation: string;
@@ -19,8 +24,18 @@ const TourCard: React.FC<TourCardProps> = ({
   tourCost,
   tourDuration,
 }) => {
+  const location = useLocation();
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  const onClickHandler = () => {
+    setShowModal(true);
+  };
+  const onCloseClickHandler = () => {
+    setShowModal(false);
+  };
+
   return (
-    <Paper elevation={2} className="complete-card-container">
+    <Paper elevation={2} className="complete-card-container cursor-pointer">
       <Box className={"image-container"}>
         <img className={"image"} src={imgSource} alt="" />
       </Box>
@@ -43,14 +58,7 @@ const TourCard: React.FC<TourCardProps> = ({
         >
           {tourDescription}
         </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            width: "75%",
-          }}
-        >
+        <Box className="price-duration">
           <Box
             sx={{
               display: "flex",
@@ -109,7 +117,45 @@ const TourCard: React.FC<TourCardProps> = ({
             </Typography>
           </Box>
         </Box>
+        <Box className="buttons-icon">
+          {location.pathname === "/my-tours" ? (
+            <Defaultbutton
+              buttonCaption="View Details"
+              buttonWidth="100%"
+              buttonHeight="57px"
+              route="/"
+            />
+          ) : (
+            <>
+              <img
+                onClick={onClickHandler}
+                className="delete-icon"
+                src={DeleteIcon}
+                alt=""
+              />
+              <Defaultbutton
+                buttonCaption="Details"
+                buttonWidth="155px"
+                buttonHeight="54px"
+                route="/"
+              />
+              <Defaultbutton
+                buttonCaption="Update"
+                buttonWidth="155px"
+                buttonHeight="54px"
+                route="/"
+              />
+            </>
+          )}
+        </Box>
       </Box>
+      {showModal && (
+        <DeleteConfirmationModal
+          tourName={tourLocation}
+          tourRemainingDays={tourDuration}
+          onCloseHandler={onCloseClickHandler}
+        />
+      )}
     </Paper>
   );
 };
