@@ -71,3 +71,19 @@
   height: 37px;
   align-self: center;
 }
+.no-data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 70vh;
+}
+.no-data-container p {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 48px;
+  color: #797c9a;
+  width: 35%;
+  text-align: center;
+}

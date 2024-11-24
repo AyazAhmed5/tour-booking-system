@@ -5,7 +5,6 @@ import { Box, Typography } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import locationIcon from "../../assets/location-icon.svg";
 import priceIcon from "../../assets/price-icon.svg";
-import largeImage from "../../assets/large-image.png";
 import smallImage1 from "../../assets/small-image-1.png";
 import smallImage2 from "../../assets/small-image-2.png";
 import smallImage3 from "../../assets/small-image-3.png";
@@ -69,7 +68,7 @@ const TourDetail = () => {
 
       <div className="grid-container">
         <div className="large-image">
-          <img src={largeImage} alt="Large " />
+          <img src={currentTour.imgSource} alt="Large " />
         </div>
         <div className="small-images">
           <img src={smallImage1} alt="Small-1 " />
@@ -81,23 +80,9 @@ const TourDetail = () => {
 
       {/* New Paragraphs Section */}
       <Box className="details-paragraphs-container">
-        <Typography>
-          The Pérez Art Museum Miami, often abbreviated as PAMM, is a cultural
-          hub that celebrates contemporary art, architecture, and landscape
-          design. Located in downtown Miami, it offers a blend of creativity and
-          nature.
-        </Typography>
-        <Typography>
-          Designed by Herzog & de Meuron, the museum's architecture is a work of
-          art itself. The open spaces, suspended gardens, and waterfront views
-          create a serene environment for art lovers and visitors alike.
-        </Typography>
-        <Typography>
-          Beyond exhibitions, PAMM hosts a variety of educational programs and
-          cultural events, making it a vibrant part of the Miami art scene.
-          Whether you’re an art enthusiast or a casual visitor, there’s
-          something for everyone to enjoy.
-        </Typography>
+        <Typography>{currentTour.tourDescription}</Typography>
+        <Typography>{currentTour.tourDescription1}</Typography>
+        <Typography>{currentTour.tourDescription2}</Typography>
       </Box>
 
       <Box className="included-section">

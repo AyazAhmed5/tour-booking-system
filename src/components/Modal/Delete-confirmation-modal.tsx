@@ -15,6 +15,7 @@ export default function DeleteConfirmationModal({
   tourName,
   tourRemainingDays,
 }: DeleteConfirmationModalProps) {
+  const allowDeletion = ["2 Days", "1 Day", "3 Days"];
   return (
     <Modal
       keepMounted
@@ -31,11 +32,24 @@ export default function DeleteConfirmationModal({
         >
           Delete Tour
         </Typography>
-        <Typography id="delete-modal-description" className="modal-description">
-          You can’t delete <strong>“{tourName}”</strong> because there are only{" "}
-          <strong>{tourRemainingDays}</strong> remaining until the beginning of
-          this tour.
-        </Typography>
+        {allowDeletion.includes(tourRemainingDays) ? (
+          <Typography
+            id="delete-modal-description"
+            className="modal-description"
+          >
+            You can’t delete <strong>“{tourName}”</strong> because there are
+            only <strong>{tourRemainingDays}</strong> remaining until the
+            beginning of this tour.
+          </Typography>
+        ) : (
+          <Typography
+            id="delete-modal-description"
+            className="modal-description"
+          >
+            Are you sure you want to Delete <strong>“{tourName}”</strong>
+          </Typography>
+        )}
+
         <div className="modal-button-container">
           <Button
             variant="outlined"
@@ -44,6 +58,15 @@ export default function DeleteConfirmationModal({
           >
             Cancel
           </Button>
+          {allowDeletion.includes(tourRemainingDays) && (
+            <Button
+              variant="outlined"
+              onClick={onCloseHandler}
+              className="delete-button"
+            >
+              Delete
+            </Button>
+          )}
         </div>
       </Box>
     </Modal>
