@@ -60,4 +60,7 @@
   .hamburger-icon {
     display: block !important;
   }
+  .header-container {
+    padding: 4px 20px;
+  }
 }

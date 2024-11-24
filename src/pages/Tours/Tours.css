@@ -7,7 +7,7 @@
 
 .tours-images-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(415px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 20px;
   padding: 50px;
 }
@@ -92,7 +92,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     margin-bottom: 20px;
   }
   .tours-header p {
@@ -100,16 +100,19 @@
     text-align: center;
   }
   .tours-images-container {
-    padding: 0px;
+    padding: 25px;
   }
 }
 
 @media (max-width: 350px) {
   .tours-header {
-    width: 90%;
+    width: 100%;
   }
   .tours-header p {
     font-size: 20px;
     text-align: center;
+  }
+  .tours-images-container {
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
   }
 }

@@ -58,8 +58,8 @@
 .details-paragraphs-container p {
   text-align: center;
   color: #555;
-  font-size: "16px";
-  line-height: "24px";
+  font-size: 16px;
+  line-height: 24px;
   margin-bottom: 16px;
 }
 
@@ -142,6 +142,22 @@
 
   .included-table .icon-cell {
     padding: 0px;
+  }
+  .book-now-container button {
+    width: 75% !important;
+  }
+
+  .details-sub-header-text {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #797c9a !important;
+  }
+  .icon-outer-container {
+    width: 26px;
+  }
+  .details-paragraphs-container p {
+    font-size: 14px;
   }
 }
 
