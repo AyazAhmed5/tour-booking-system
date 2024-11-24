@@ -8,10 +8,7 @@ const Tours = () => {
   return (
     <div>
       <Box className="tours-header">
-        <Typography
-          className="tours-header-text"
-          sx={{ fontSize: "40px", fontWeight: 600 }}
-        >
+        <Typography sx={{ fontSize: "40px", fontWeight: 600 }}>
           Top Destinations At “Miami”
         </Typography>
         <Button

@@ -4,7 +4,7 @@ import priceIcon from "../../assets/price-icon.svg";
 import DeleteIcon from "../../assets/delete icon.png";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Defaultbutton from "../../components/DefaultButton/DefaultButton";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import DeleteConfirmationModal from "../../components/Modal/Delete-confirmation-modal";
 interface TourCardProps {
@@ -119,12 +119,17 @@ const TourCard: React.FC<TourCardProps> = ({
         </Box>
         <Box className="buttons-icon">
           {location.pathname === "/my-tours" ? (
-            <Defaultbutton
-              buttonCaption="View Details"
-              buttonWidth="100%"
-              buttonHeight="57px"
-              route="/"
-            />
+            <Link
+              to={`/tour-detail/${id}`}
+              style={{ display: "inline-block", width: "100%" }}
+            >
+              <Defaultbutton
+                buttonCaption="View Details"
+                buttonWidth="100%"
+                buttonHeight="57px"
+                route="/"
+              />
+            </Link>
           ) : (
             <>
               <img

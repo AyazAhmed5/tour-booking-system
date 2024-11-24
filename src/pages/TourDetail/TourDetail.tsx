@@ -1,4 +1,222 @@
+import { useParams } from "react-router-dom";
+import "./TourDetail.css";
+import { toursData } from "../../utils";
+import { Box, Typography } from "@mui/material";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import locationIcon from "../../assets/location-icon.svg";
+import priceIcon from "../../assets/price-icon.svg";
+import largeImage from "../../assets/large-image.png";
+import smallImage1 from "../../assets/small-image-1.png";
+import smallImage2 from "../../assets/small-image-2.png";
+import smallImage3 from "../../assets/small-image-3.png";
+import smallImage4 from "../../assets/small-image-4.png";
+import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
+import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
+import CloudQueueOutlinedIcon from "@mui/icons-material/CloudQueueOutlined";
+
 const TourDetail = () => {
-  return <h1>TourDetail</h1>;
+  const { id } = useParams();
+  const currentTour = toursData[Number(id) - 1];
+  return (
+    <div className="details-main-container">
+      <Typography sx={{ fontSize: "40px", fontWeight: 600 }}>
+        {currentTour.tourLocation}
+      </Typography>
+      <Box className="detail-sub-header">
+        <Box className="icon-common-styles">
+          <div className="icon-outer-container">
+            <img
+              src={locationIcon}
+              alt="Explore Tour Background"
+              style={{
+                width: "14px",
+                height: "18px",
+              }}
+            />
+          </div>
+          <Typography className="details-sub-header-text">Miami</Typography>
+        </Box>
+        <Box className="icon-common-styles">
+          <div
+            className="icon-outer-container"
+            style={{ width: "24px", height: "24px" }}
+          >
+            <img
+              src={priceIcon}
+              alt="Price-icon"
+              style={{
+                width: "10px",
+                height: "15px",
+              }}
+            />
+          </div>
+          <Typography className="details-sub-header-text">
+            {currentTour.tourCost}
+          </Typography>
+        </Box>
+        <Box className="icon-common-styles">
+          <div
+            className="icon-outer-container"
+            style={{ width: "24px", height: "24px" }}
+          >
+            <AccessTimeIcon sx={{ color: "gray", fontSize: "18px" }} />
+          </div>
+          <Typography className="details-sub-header-text">
+            {currentTour.tourDuration}
+          </Typography>
+        </Box>
+      </Box>
+
+      <div className="grid-container">
+        <div className="large-image">
+          <img src={largeImage} alt="Large " />
+        </div>
+        <div className="small-images">
+          <img src={smallImage1} alt="Small-1 " />
+          <img src={smallImage2} alt="Small-2" />
+          <img src={smallImage3} alt="Small-3" />
+          <img src={smallImage4} alt="Small-4" />
+        </div>
+      </div>
+
+      {/* New Paragraphs Section */}
+      <Box className="details-paragraphs-container">
+        <Typography>
+          The Pérez Art Museum Miami, often abbreviated as PAMM, is a cultural
+          hub that celebrates contemporary art, architecture, and landscape
+          design. Located in downtown Miami, it offers a blend of creativity and
+          nature.
+        </Typography>
+        <Typography>
+          Designed by Herzog & de Meuron, the museum's architecture is a work of
+          art itself. The open spaces, suspended gardens, and waterfront views
+          create a serene environment for art lovers and visitors alike.
+        </Typography>
+        <Typography>
+          Beyond exhibitions, PAMM hosts a variety of educational programs and
+          cultural events, making it a vibrant part of the Miami art scene.
+          Whether you’re an art enthusiast or a casual visitor, there’s
+          something for everyone to enjoy.
+        </Typography>
+      </Box>
+
+      <Box className="included-section">
+        <Typography component="h2">What’s included</Typography>
+
+        <table className="included-table">
+          <tbody>
+            <tr>
+              <td className="bold-text">Destination</td>
+              <td>Miami</td>
+            </tr>
+            <tr>
+              <td className="bold-text">Departure Location</td>
+              <td>2000 Brush St, Detroit, MI 48226, United States</td>
+            </tr>
+            <tr>
+              <td className="bold-text">Return</td>
+              <td>7:00 PM on Day 3</td>
+            </tr>
+            <tr>
+              <td className="bold-text">Return</td>
+              <td colSpan={2} className="icon-cell">
+                <div className="icon-grid">
+                  <Typography>
+                    <CheckCircleRoundedIcon sx={{ color: "#F16B51" }} /> Basic
+                    first aid kit
+                  </Typography>
+                  <Typography>
+                    <CheckCircleRoundedIcon sx={{ color: "#F16B51" }} /> Fuel
+                    Expense
+                  </Typography>
+                  <Typography>
+                    <CheckCircleRoundedIcon sx={{ color: "#F16B51" }} /> Detail
+                    Guided Maps
+                  </Typography>
+                  <Typography>
+                    <CheckCircleRoundedIcon sx={{ color: "#F16B51" }} />
+                    Comfortable Private Booked Transport
+                  </Typography>
+                  <Typography>
+                    <CheckCircleRoundedIcon sx={{ color: "#F16B51" }} /> Mess
+                    Tent, Kitchen Utensils, and Cook
+                  </Typography>
+                  <Typography>
+                    <CheckCircleRoundedIcon sx={{ color: "#F16B51" }} />{" "}
+                    Waterproof Tents on twin/triple Sharing
+                  </Typography>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </Box>
+
+      {/*Itinerary Section */}
+      <Box className="itinerary-section">
+        <Typography component="h2">Itinerary Schedule</Typography>
+
+        <Box className="itinerary-cards">
+          <Box className="itinerary-card">
+            <Box className="itinerary-card-header">
+              <Typography component="h3">Day 1</Typography>
+              <Typography className="temperature-display">
+                <WbSunnyOutlinedIcon
+                  sx={{ marginRight: "8px", color: "#757575" }}
+                />
+                18°C
+              </Typography>
+            </Box>
+            <ul>
+              <li>Tours with American Sign Language</li>
+              <li>Audio description group tours</li>
+              <li>Large-print gallery notes</li>
+              <li>Lunch included.</li>
+            </ul>
+          </Box>
+
+          <Box className="itinerary-card">
+            <Box className="itinerary-card-header">
+              <Typography component="h3">Day 2</Typography>
+              <Typography className="temperature-display">
+                <CloudQueueOutlinedIcon
+                  sx={{ marginRight: "8px", color: "#757575" }}
+                />
+                14°C
+              </Typography>
+            </Box>
+            <ul>
+              <li>Tours with American Sign Language</li>
+              <li>Audio description group tours</li>
+              <li>Large-print gallery notes</li>
+              <li>Lunch included.</li>
+            </ul>
+          </Box>
+
+          <Box className="itinerary-card">
+            <Box className="itinerary-card-header">
+              <Typography component="h3">Day 3</Typography>
+              <Typography className="temperature-display">
+                <WbSunnyOutlinedIcon
+                  sx={{ marginRight: "8px", color: "#757575" }}
+                />
+                17°C
+              </Typography>
+            </Box>
+            <ul>
+              <li>Tours with American Sign Language</li>
+              <li>Audio description group tours</li>
+              <li>Large-print gallery notes</li>
+              <li>Lunch included.</li>
+            </ul>
+          </Box>
+        </Box>
+
+        <Box className="book-now-container">
+          <button>Book Now</button>
+        </Box>
+      </Box>
+    </div>
+  );
 };
 export default TourDetail;
