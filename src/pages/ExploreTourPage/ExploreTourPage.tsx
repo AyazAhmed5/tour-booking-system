@@ -1,13 +1,26 @@
-import { Box, Button, Chip, Paper, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Chip,
+  MenuItem,
+  Paper,
+  Select,
+  SelectChangeEvent,
+  Stack,
+  Typography,
+} from "@mui/material";
 import bgImage from "../../assets/bgExploreTour.svg";
 import "./ExploreTour.css";
 import searchIcon from "../../assets/search-icon.svg";
 import locationIcon from "../../assets/location-icon.svg";
-import calendarIcon from "../../assets/calendar-icon.svg";
 import priceIcon from "../../assets/price-icon.svg";
-import { DateRangePicker } from "rsuite";
+import { useState } from "react";
 
 const ExploreTourPage = () => {
+  const [priceRange, setPriceRange] = useState<string>("");
+  const handlePriceChange = (event: SelectChangeEvent<string>) => {
+    setPriceRange(event.target.value);
+  };
   const popularDestinations = [
     "Istanbul",
     "Dubai",
@@ -91,7 +104,7 @@ const ExploreTourPage = () => {
           >
             <div className="icon-outer-container">
               <img
-                src={calendarIcon}
+                src={locationIcon}
                 alt="Explore Tour Background"
                 style={{
                   width: "14px",
@@ -103,13 +116,12 @@ const ExploreTourPage = () => {
               Choose Date
             </Typography>
           </Box>
-          <DateRangePicker placeholder="Select Date Range" />
+          <Typography className="middle-secondary-text ">
+            Choose Here
+          </Typography>
         </Box>
-        <Box
-          sx={{
-            margin: "auto",
-          }}
-        >
+        {/* Price Range Section */}
+        <Box sx={{ margin: "auto" }}>
           <Box
             sx={{
               display: "flex",
@@ -121,28 +133,65 @@ const ExploreTourPage = () => {
             <div className="icon-outer-container">
               <img
                 src={priceIcon}
-                alt="Explore Tour Background"
-                style={{
-                  width: "14px",
-                  height: "18px",
-                }}
+                alt="Price Icon"
+                style={{ width: "14px", height: "18px" }}
               />
             </div>
-            <Typography className="middle-container-text  ">
+
+            <Typography className="middle-container-text">
               Price Range
             </Typography>
           </Box>
 
-          <Typography className=" middle-secondary-text">
-            Choose here
-          </Typography>
+          <Select
+            value={priceRange}
+            onChange={handlePriceChange}
+            variant="outlined"
+            sx={{
+              width: "100%",
+              border: "none",
+              borderRadius: "12px",
+              textTransform: "none",
+              "& .MuiSelect-select": {
+                padding: "5px 50px", // Adjust the padding to reduce the distance
+              },
+              "& .MuiOutlinedInput-notchedOutline": {
+                border: "none",
+              },
+
+              "& .MuiMenuItem-root:hover": {
+                backgroundColor: "#F16B5133", // Hover effect for each MenuItem (dropdown option)
+              },
+            }}
+          >
+            <MenuItem value="">Choose Here</MenuItem>
+            <MenuItem className="select-text" value="50-200">
+              $50 - $200
+            </MenuItem>
+            <MenuItem className="select-text" value="200-400">
+              $200 - $400
+            </MenuItem>
+            <MenuItem className="select-text" value="400-600">
+              $400 - $600
+            </MenuItem>
+            <MenuItem className="select-text" value="600-800">
+              $600 - $800
+            </MenuItem>
+            <MenuItem className="select-text" value="800-1000">
+              $800 - $1000
+            </MenuItem>
+            <MenuItem className="select-text" value="1000+">
+              $1000 Above
+            </MenuItem>
+          </Select>
         </Box>
+
         <Button
           className="button-search"
           startIcon={
             <img
               src={searchIcon}
-              alt="searchIcon "
+              alt="searchIcon"
               style={{ width: 24, height: 24, paddingLeft: "10px" }}
             />
           }

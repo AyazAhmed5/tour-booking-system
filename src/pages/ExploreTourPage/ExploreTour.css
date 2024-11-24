@@ -54,3 +54,12 @@
   min-height: 50px;
   font-size: 20px !important;
 }
+.css-iwtkcv-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
+  background-color: #f16b5133 !important; /* Fully opaque orange */
+}
+.select-text {
+  font-weight: 400 !important;
+  color: #505050 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+}

@@ -8,13 +8,6 @@
   height: 85vh;
 }
 
-@media (max-width: 768px) {
-  .add-tour-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .form-image-container {
   height: 100%;
 }
@@ -45,8 +38,21 @@
 }
 
 @media (max-width: 768px) {
+  .add-tour-container {
+    flex-direction: column;
+    align-items: center;
+  }
   .form-group-row {
     flex-direction: column;
+  }
+  .form-input {
+    width: 100% !important;
+  }
+  .form-select {
+    width: 100% !important;
+  }
+  .form-group-row {
+    width: 100%;
   }
 }
 

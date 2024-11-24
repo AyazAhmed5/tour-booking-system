@@ -18,7 +18,10 @@ const TourDetail = () => {
   const currentTour = toursData[Number(id) - 1];
   return (
     <div className="details-main-container">
-      <Typography sx={{ fontSize: "40px", fontWeight: 600 }}>
+      <Typography
+        className="details-heder-text"
+        sx={{ fontSize: "40px", fontWeight: 600 }}
+      >
         {currentTour.tourLocation}
       </Typography>
       <Box className="detail-sub-header">

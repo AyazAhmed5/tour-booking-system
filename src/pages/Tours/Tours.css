@@ -7,7 +7,7 @@
 
 .tours-images-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(415px, 1fr));
   gap: 20px;
   padding: 50px;
 }
@@ -86,4 +86,30 @@
   color: #797c9a;
   width: 35%;
   text-align: center;
+}
+@media (max-width: 790px) {
+  .tours-header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .tours-header p {
+    font-size: 25px;
+    text-align: center;
+  }
+  .tours-images-container {
+    padding: 0px;
+  }
+}
+
+@media (max-width: 350px) {
+  .tours-header {
+    width: 90%;
+  }
+  .tours-header p {
+    font-size: 20px;
+    text-align: center;
+  }
 }
