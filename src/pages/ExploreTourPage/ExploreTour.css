@@ -29,13 +29,13 @@
   font-size: 14px !important;
   color: #999 !important;
   margin-top: 4px !important;
-  margin-left: 25px !important;
+  margin-left: 48px !important;
 }
 .middle-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2px;
+  gap: 12px;
   margin: auto;
   border-radius: 12px !important;
   z-index: 2;

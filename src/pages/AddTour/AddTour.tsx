@@ -71,6 +71,7 @@ const AddTour = () => {
       {/* Form Container */}
       <Box className="form-container">
         <Typography
+          className="form-title"
           sx={{
             fontSize: { xs: "28px", sm: "32px", md: "40px" },
             lineHeight: { xs: "36px", sm: "48px", md: "60px" },
@@ -207,6 +208,7 @@ const AddTour = () => {
       {/* Image Container */}
       <Box className="form-image-container">
         <img
+          className="form-right-img"
           style={{ height: "100%" }}
           src={bookingPageImage}
           alt="Booking Illustration"
