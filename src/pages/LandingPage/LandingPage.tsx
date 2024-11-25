@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import Defaultbutton from "../../components/defaultButton/DefaultButton";
+import Defaultbutton from "../../components/DefaultButton/DefaultButton";
 import { Link } from "react-router-dom";
 import image1 from "../../assets/image-1.svg";
 import image2 from "../../assets/image-2.svg";

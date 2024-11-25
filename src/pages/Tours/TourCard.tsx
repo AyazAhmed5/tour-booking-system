@@ -3,7 +3,7 @@ import "./Tours.css";
 import priceIcon from "../../assets/price-icon.svg";
 import DeleteIcon from "../../assets/delete icon.png";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import Defaultbutton from "../../components/defaultButton/DefaultButton";
+import Defaultbutton from "../../components/DefaultButton/DefaultButton";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import DeleteConfirmationModal from "../../components/modal/Delete-confirmation-modal";
