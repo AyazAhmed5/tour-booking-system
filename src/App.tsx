@@ -7,7 +7,7 @@ import ExploreTourPage from "./pages/ExploreTourPage/ExploreTourPage";
 import AddTour from "./pages/AddTour/AddTour";
 import MyTours from "./pages/MyTours/MyTours";
 import TourDetail from "./pages/TourDetail/TourDetail";
-import Tours from "./pages/AllTours/Tours";
+import Tours from "./pages/Tours/Tours";
 
 const theme = createTheme({
   typography: {

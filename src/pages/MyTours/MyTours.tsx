@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import TourCard from "../AllTours/TourCard";
+import TourCard from "../Tours/TourCard";
 import { toursData } from "../../utils";
 
 const MyTours = () => {
