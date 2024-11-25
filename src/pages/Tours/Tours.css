@@ -104,7 +104,7 @@
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .tours-header {
     width: 100%;
   }
@@ -113,6 +113,6 @@
     text-align: center;
   }
   .tours-images-container {
-    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }

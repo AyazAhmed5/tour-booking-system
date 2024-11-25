@@ -53,7 +53,9 @@
   .header-inner-container {
     display: none;
   }
-
+  .main-header-container {
+    width: 80%;
+  }
   .explore-button-link {
     visibility: hidden !important;
   }
@@ -62,5 +64,10 @@
   }
   .main-header-container {
     padding: 4px 20px;
+  }
+}
+@media (max-width: 400px) {
+  .main-header-container {
+    width: 100%;
   }
 }
