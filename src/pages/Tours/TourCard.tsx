@@ -6,7 +6,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Defaultbutton from "../../components/DefaultButton/DefaultButton";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import DeleteConfirmationModal from "../../components/modal/Delete-confirmation-modal";
+import DeleteConfirmationModal from "../../components/Modal/Delete-confirmation-modal";
 interface TourCardProps {
   id: string;
   tourLocation: string;
