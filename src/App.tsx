@@ -1,6 +1,6 @@
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import LandingPage from "./pages/landingPage/LandingPage";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import Header from "./components/header/header";
 import { Route, Routes } from "react-router-dom";
 import ExploreTourPage from "./pages/exploreTourPage/ExploreTourPage";
