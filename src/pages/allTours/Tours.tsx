@@ -10,20 +10,11 @@ const Tours = () => {
     <>
       <div>
         <Box className="tours-header">
-          <Typography sx={{ fontSize: "40px", fontWeight: 600 }}>
-            Top Destinations At “Miami”
-          </Typography>
+          <Typography>Top Destinations At “Miami”</Typography>
           <Button
             variant="outlined"
+            className="tours-header-button"
             startIcon={<FilterListIcon />}
-            sx={{
-              color: "inherit",
-              textTransform: "none",
-              borderColor: "#E1E1E1",
-              borderRadius: "12px",
-              fontWeight: 500,
-              fontSize: "20px",
-            }}
           >
             Filters
           </Button>

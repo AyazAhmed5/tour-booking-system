@@ -1,17 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import TourCard from "../Tours/TourCard";
+import TourCard from "../allTours/TourCard";
 import { toursData } from "../../utils";
 
 const MyTours = () => {
   return (
     <div>
       <Box className="tours-header">
-        <Typography
-          className="tours-header-text"
-          sx={{ fontSize: "40px", fontWeight: 600 }}
-        >
-          My Tours
-        </Typography>
+        <Typography className="tours-header-text">My Tours</Typography>
       </Box>
       <Box className="tours-images-container">
         {toursData.map(

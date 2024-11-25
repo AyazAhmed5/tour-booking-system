@@ -16,6 +16,8 @@ interface Tour {
   tourDuration: string;
 }
 
+// export const toursData: Tour[] = [];
+
 // Use the interface with the toursData array
 export const toursData: Tour[] = [
   {
@@ -97,5 +99,29 @@ export const toursData: Tour[] = [
     tourDuration: "2 Days",
   },
 ];
+export const priceRanges = [
+  { value: "50-200", label: "$50 - $200" },
+  { value: "200-400", label: "$200 - $400" },
+  { value: "400-600", label: "$400 - $600" },
+  { value: "600-800", label: "$600 - $800" },
+  { value: "800-1000", label: "$800 - $1000" },
+  { value: "1000+", label: "$1000 Above" },
+];
 
-// export const toursData: Tour[] = [];
+export const popularDestinations = [
+  "Istanbul",
+  "Dubai",
+  "Miami",
+  "Chicago",
+  "Dallas",
+  "Havana",
+  "Berlin",
+  "London",
+  "Ankara",
+  "Orlando",
+  "Cape Town",
+  "Santroni",
+  "Madrid",
+  "Lisbon",
+  "New Orleans",
+];

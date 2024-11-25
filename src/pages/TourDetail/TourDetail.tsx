@@ -18,10 +18,7 @@ const TourDetail = () => {
   const currentTour = toursData[Number(id) - 1];
   return (
     <div className="details-main-container">
-      <Typography
-        className="details-heder-text"
-        sx={{ fontSize: "40px", fontWeight: 600 }}
-      >
+      <Typography className="details-heder-text">
         {currentTour.tourLocation}
       </Typography>
       <Box className="detail-sub-header">
@@ -149,9 +146,7 @@ const TourDetail = () => {
             <Box className="itinerary-card-header">
               <Typography component="h3">Day 1</Typography>
               <Typography className="temperature-display">
-                <WbSunnyOutlinedIcon
-                  sx={{ marginRight: "8px", color: "#757575" }}
-                />
+                <WbSunnyOutlinedIcon className="temperature-title" />
                 18°C
               </Typography>
             </Box>
@@ -167,9 +162,7 @@ const TourDetail = () => {
             <Box className="itinerary-card-header">
               <Typography component="h3">Day 2</Typography>
               <Typography className="temperature-display">
-                <CloudQueueOutlinedIcon
-                  sx={{ marginRight: "8px", color: "#757575" }}
-                />
+                <CloudQueueOutlinedIcon className="temperature-title" />
                 14°C
               </Typography>
             </Box>
@@ -185,9 +178,7 @@ const TourDetail = () => {
             <Box className="itinerary-card-header">
               <Typography component="h3">Day 3</Typography>
               <Typography className="temperature-display">
-                <WbSunnyOutlinedIcon
-                  sx={{ marginRight: "8px", color: "#757575" }}
-                />
+                <WbSunnyOutlinedIcon className="temperature-title" />
                 17°C
               </Typography>
             </Box>

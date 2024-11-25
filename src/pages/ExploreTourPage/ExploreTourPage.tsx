@@ -16,37 +16,15 @@ import locationIcon from "../../assets/location-icon.svg";
 import priceIcon from "../../assets/price-icon.svg";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import { useState } from "react";
+import { popularDestinations, priceRanges } from "../../utils";
 
 const ExploreTourPage = () => {
   const [priceRange, setPriceRange] = useState<string>("");
+
   const handlePriceChange = (event: SelectChangeEvent<string>) => {
     setPriceRange(event.target.value);
   };
-  const priceRanges = [
-    { value: "50-200", label: "$50 - $200" },
-    { value: "200-400", label: "$200 - $400" },
-    { value: "400-600", label: "$400 - $600" },
-    { value: "600-800", label: "$600 - $800" },
-    { value: "800-1000", label: "$800 - $1000" },
-    { value: "1000+", label: "$1000 Above" },
-  ];
-  const popularDestinations = [
-    "Istanbul",
-    "Dubai",
-    "Miami",
-    "Chicago",
-    "Dallas",
-    "Havana",
-    "Berlin",
-    "London",
-    "Ankara",
-    "Orlando",
-    "Cape Town",
-    "Santroni",
-    "Madrid",
-    "Lisbon",
-    "New Orleans",
-  ];
+
   return (
     <>
       <div className="outer-wrapperr"></div>
@@ -55,16 +33,9 @@ const ExploreTourPage = () => {
           elevation={5}
           className="middle-container"
           sx={{
-            display: "flex",
             flexWrap: { xs: "wrap", md: "nowrap" },
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 2,
             padding: { xs: 2, md: 3 },
             width: { xs: "90%", sm: "80%", md: "60%" },
-            margin: "auto",
-            borderRadius: "12px",
-            zIndex: 2,
           }}
         >
           {/* Location Section */}
@@ -78,7 +49,7 @@ const ExploreTourPage = () => {
               flex: 1,
               paddingRight: { xs: 0, md: 2 },
               borderRight: { xs: "none", md: "1px solid #E1E1E1" },
-              marginBottom: { xs: 2, md: 0 },
+              marginBottom: { sxs: 2, md: 0 },
             }}
           >
             <Box
@@ -98,24 +69,9 @@ const ExploreTourPage = () => {
                   }}
                 />
               </div>
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  fontSize: "16px",
-                  color: "#333",
-                }}
-              >
-                Location
-              </Typography>
+              <Typography className="middle-headings">Location</Typography>
             </Box>
-            <Typography
-              sx={{
-                fontSize: "12px",
-                color: "#999",
-                marginTop: "4px",
-                marginLeft: "25px",
-              }}
-            >
+            <Typography className="middle-sub-headings">
               Where do you want to go?
             </Typography>
           </Box>
@@ -124,11 +80,6 @@ const ExploreTourPage = () => {
           <Box
             className="location-date-box"
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              flex: 1,
               paddingRight: { xs: 0, md: 2 },
               borderRight: { xs: "none", md: "1px solid #E1E1E1" },
               marginBottom: { xs: 2, md: 0 },
@@ -138,24 +89,9 @@ const ExploreTourPage = () => {
               <div className="icon-outer-container">
                 <CalendarMonthOutlinedIcon style={{ color: "#75778B" }} />
               </div>
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  fontSize: "16px",
-                  color: "#333",
-                }}
-              >
-                Choose Date
-              </Typography>
+              <Typography className="middle-headings">Choose Date</Typography>
             </Box>
-            <Typography
-              sx={{
-                fontSize: "14px",
-                color: "#999",
-                marginTop: "4px",
-                marginLeft: "25px",
-              }}
-            >
+            <Typography className="middle-sub-headings">
               26 Mar - 4 Apr
             </Typography>
           </Box>
@@ -164,10 +100,6 @@ const ExploreTourPage = () => {
           <Box
             className="location-date-box"
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
               flex: 1,
               marginBottom: { xs: 2, md: 0 },
             }}
@@ -180,15 +112,7 @@ const ExploreTourPage = () => {
                   style={{ width: "14px", height: "18px" }}
                 />
               </div>
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  fontSize: "16px",
-                  color: "#333",
-                }}
-              >
-                Price Range
-              </Typography>
+              <Typography className="middle-headings">Price Range</Typography>
             </Box>
             <FormControl
               fullWidth
@@ -253,17 +177,7 @@ const ExploreTourPage = () => {
             />
           </Button>
         </Paper>
-        <Box
-          className="bottom-container"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "20px",
-            gap: 2,
-          }}
-        >
+        <Box className="bottom-container">
           <Typography
             sx={{
               fontWeight: 600,

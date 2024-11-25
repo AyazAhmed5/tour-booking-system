@@ -21,7 +21,15 @@
   justify-content: center;
   gap: 8px;
 }
+.temperature-title {
+  margin-right: 8px !important;
+  color: #757575 !important;
+}
 
+.details-heder-text {
+  font-weight: 600 !important;
+  font-size: 40px !important;
+}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;

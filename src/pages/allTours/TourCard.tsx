@@ -3,10 +3,10 @@ import "./Tours.css";
 import priceIcon from "../../assets/price-icon.svg";
 import DeleteIcon from "../../assets/delete icon.png";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import Defaultbutton from "../../components/DefaultButton/DefaultButton";
+import Defaultbutton from "../../components/defaultButton/DefaultButton";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import DeleteConfirmationModal from "../../components/Modal/Delete-confirmation-modal";
+import DeleteConfirmationModal from "../../components/modal/Delete-confirmation-modal";
 interface TourCardProps {
   id: string;
   tourLocation: string;
@@ -40,33 +40,12 @@ const TourCard: React.FC<TourCardProps> = ({
         <img className={"image"} src={imgSource} alt="" />
       </Box>
       <Box className="card-lower-container">
-        <Typography
-          sx={{ fontSize: "20px", fontWeight: 500, lineHeight: "30px" }}
-        >
-          {tourLocation}
-        </Typography>
-        <Typography
-          className="truncate"
-          sx={{
-            fontSize: "16px",
-            fontWeight: 400,
-            lineHeight: "24px",
-            color: "#999999",
-            maxWidth: "370px",
-            maxHeight: "48px",
-          }}
-        >
+        <Typography className="location-text">{tourLocation}</Typography>
+        <Typography className="truncate location-description">
           {tourDescription}
         </Typography>
         <Box className="price-duration">
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 1,
-            }}
-          >
+          <Box className="common-box-style">
             <div
               className="icon-outer-container"
               style={{ width: "24px", height: "24px" }}
@@ -80,39 +59,16 @@ const TourCard: React.FC<TourCardProps> = ({
                 }}
               />
             </div>
-            <Typography
-              sx={{
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "24px",
-                color: "#797C9A",
-              }}
-            >
-              {tourCost}
-            </Typography>
+            <Typography className="tour-duration-cost">{tourCost}</Typography>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 1,
-            }}
-          >
+          <Box className="common-box-style">
             <div
               className="icon-outer-container"
               style={{ width: "24px", height: "24px" }}
             >
               <AccessTimeIcon sx={{ color: "gray", fontSize: "18px" }} />
             </div>
-            <Typography
-              sx={{
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "24px",
-                color: "#797C9A",
-              }}
-            >
+            <Typography className="tour-duration-cost">
               {tourDuration}
             </Typography>
           </Box>

@@ -1,13 +1,13 @@
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import LandingPage from "./pages/LandingPage/LandingPage";
-import Header from "./components/Header/header";
+import LandingPage from "./pages/landingPage/LandingPage";
+import Header from "./components/header/header";
 import { Route, Routes } from "react-router-dom";
-import ExploreTourPage from "./pages/ExploreTourPage/ExploreTourPage";
-import AddTour from "./pages/AddTour/AddTour";
-import MyTours from "./pages/MyTours/MyTours";
-import TourDetail from "./pages/TourDetail/TourDetail";
-import Tours from "./pages/Tours/Tours";
+import ExploreTourPage from "./pages/exploreTourPage/ExploreTourPage";
+import AddTour from "./pages/addTour/AddTour";
+import MyTours from "./pages/myTours/MyTours";
+import TourDetail from "./pages/tourDetail/TourDetail";
+import Tours from "./pages/allTours/Tours";
 
 const theme = createTheme({
   typography: {

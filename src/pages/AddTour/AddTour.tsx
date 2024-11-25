@@ -72,8 +72,6 @@ const AddTour = () => {
       <Box className="form-container">
         <Typography
           sx={{
-            fontWeight: 600,
-            color: "#202445",
             fontSize: { xs: "28px", sm: "32px", md: "40px" },
             lineHeight: { xs: "36px", sm: "48px", md: "60px" },
           }}
@@ -198,19 +196,7 @@ const AddTour = () => {
           <Button
             type="submit"
             variant="contained"
-            sx={{
-              backgroundColor: "#FF6347",
-              width: "77%",
-              color: "white",
-              borderRadius: "12px !important",
-              marginTop: "24px",
-              padding: "12px 0",
-              fontSize: "16px",
-              textTransform: "none",
-              "&:hover": {
-                backgroundColor: "#e55347",
-              },
-            }}
+            className="form-confirm-button"
             disabled={!isValid}
           >
             Confirm

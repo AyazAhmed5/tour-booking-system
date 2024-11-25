@@ -15,7 +15,25 @@
 .form-container {
   flex: 1;
 }
+.form-container p {
+  font-weight: 600;
+  color: #202445;
+}
 
+.form-confirm-button {
+  background-color: #ff6347;
+  width: 77%;
+  color: white;
+  border-radius: 12px !important;
+  margin-top: 24px !important;
+  padding: 12px 0 !important;
+  font-size: 16px !important;
+  text-transform: none;
+}
+
+.form-confirm-button:hover {
+  background-color: #e55347;
+}
 /* Form Styles */
 .form-fields {
   display: flex;
