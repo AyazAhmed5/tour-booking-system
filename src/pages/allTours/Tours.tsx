@@ -1,9 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import "./Tours.css";
-import TourCard from "./TourCard";
+
 import { toursData } from "../../utils";
 import noDataFound from "../../assets/no-data-found.svg";
+import TourCard from "./TourCard";
 
 const Tours = () => {
   return (
