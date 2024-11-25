@@ -136,7 +136,7 @@ const ExploreTourPage = () => {
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <div className="icon-outer-container">
-                <CalendarMonthOutlinedIcon />
+                <CalendarMonthOutlinedIcon style={{ color: "#75778B" }} />
               </div>
               <Typography
                 sx={{
