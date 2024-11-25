@@ -211,7 +211,7 @@ const AddTour = () => {
                 backgroundColor: "#e55347",
               },
             }}
-            disabled={!isValid} // Disable button if form is invalid
+            disabled={!isValid}
           >
             Confirm
           </Button>

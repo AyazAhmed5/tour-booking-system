@@ -76,40 +76,40 @@
 /* Tablet view */
 @media (max-width: 950px) {
   .landing-page-container {
-    flex-direction: column; /* Stack the containers vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: auto;
   }
 
   .landing-page-left-container {
-    width: 80%; /* Adjust width for smaller screens */
+    width: 80%;
     text-align: center;
     padding: 20px;
     gap: 20px;
   }
 
   .landing-page-heading {
-    font-size: 48px !important; /* Reduce font size */
+    font-size: 48px !important;
     line-height: 72px !important;
     width: auto;
   }
 
   .landing-page-paragraph {
-    font-size: 18px !important; /* Reduce font size */
+    font-size: 18px !important;
     line-height: 28px !important;
     width: auto;
   }
 
   .image-grid {
-    position: relative; /* Remove absolute positioning */
+    position: relative;
     margin-top: 20px;
     left: 0;
     bottom: 0;
-    grid-template-columns: 1fr 1fr; /* Adjust grid layout */
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 5px;
-    width: 80%; /* Center the grid */
+    width: 80%;
   }
   .outer-wrapper {
     width: 105%;
@@ -119,32 +119,32 @@
 /* Mobile view */
 @media (max-width: 768px) {
   .landing-page-container {
-    height: auto; /* Allow dynamic height */
+    height: auto;
   }
 
   .landing-page-left-container {
-    width: 90%; /* Adjust width for smaller screens */
+    width: 90%;
     padding: 10px;
   }
 
   .landing-page-heading {
-    font-size: 32px !important; /* Further reduce font size */
+    font-size: 32px !important;
     line-height: 48px !important;
   }
 
   .landing-page-paragraph {
-    font-size: 16px !important; /* Further reduce font size */
+    font-size: 16px !important;
     line-height: 24px !important;
   }
 
   .image-grid {
-    grid-template-columns: 1fr 1fr; /* Single column for grid */
-    grid-template-rows: repeat(4, 1fr); /* Stack images vertically */
-    width: 100%; /* Full width */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    width: 100%;
     gap: 5px;
   }
 
   .image {
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
   }
 }

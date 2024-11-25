@@ -24,8 +24,8 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Large image takes 2/3 of the space, small images take 1/3 */
-  gap: 10px; /* Space between grid items */
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   margin-top: 10px;
 }
 
@@ -33,21 +33,21 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 10px; /* Optional: Rounded corners */
+  border-radius: 10px;
 }
 
 .small-images {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 images per row */
-  grid-template-rows: repeat(2, 1fr); /* 2 rows */
-  gap: 10px; /* Space between small images */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
 }
 
 .small-images img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px; /* Optional: Rounded corners */
+  border-radius: 10px;
 }
 
 .details-paragraphs-container {
@@ -63,7 +63,7 @@
   margin-bottom: 16px;
 }
 
-/* What's Included Section with Tabular Structure */
+/* What's Included Section */
 .included-section {
   margin-top: 32px;
 }
@@ -74,7 +74,7 @@
   margin-bottom: 16px;
 }
 
-/* Table-like Structure */
+/* Table Structure css */
 .included-table {
   width: 100%;
   border-collapse: collapse;
@@ -106,8 +106,8 @@
 
 .icon-grid {
   display: grid;
-  grid-template-columns: 1fr 3fr; /* Two columns */
-  gap: 16px; /* Gap between grid items */
+  grid-template-columns: 1fr 3fr;
+  gap: 16px;
 }
 
 .icon-grid .MuiTypography-root {
@@ -121,7 +121,7 @@
   height: 16px;
 }
 
-/* Responsive Design */
+/* Tablet Design */
 @media (max-width: 768px) {
   .included-table th,
   .included-table td {
@@ -162,7 +162,6 @@
 }
 
 /*What's included CSS + itinerary CSS */
-/* Common Typography */
 .included-section,
 .itinerary-section {
   margin-top: 32px;
@@ -175,7 +174,6 @@
   line-height: 60px;
 }
 
-/* Itinerary Schedule Section */
 .itinerary-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -188,15 +186,15 @@
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   text-align: center;
-  background-color: #ffffff; /* White background for the card */
-  border-radius: 8px; /* Rounded corners */
-  padding: 16px; /* Inner padding */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: box-shadow 0.3s ease; /* Smooth transition effect */
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .itinerary-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .itinerary-card-header {
   display: flex;
@@ -223,12 +221,11 @@
   line-height: 2;
 }
 .temperature-display {
-  display: flex; /* Enables flexbox layout */
-  align-items: center; /* Vertically aligns the icon and text */
-  gap: 8px; /* Adds space between the icon and text */
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Book Now Button */
 .book-now-container {
   text-align: center;
   margin-top: 32px;

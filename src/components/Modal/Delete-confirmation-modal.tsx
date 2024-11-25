@@ -58,7 +58,7 @@ export default function DeleteConfirmationModal({
           >
             Cancel
           </Button>
-          {allowDeletion.includes(tourRemainingDays) && (
+          {!allowDeletion.includes(tourRemainingDays) && (
             <Button
               variant="outlined"
               onClick={onCloseHandler}

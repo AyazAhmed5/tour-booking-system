@@ -56,7 +56,7 @@ const ExploreTourPage = () => {
           className="middle-container"
           sx={{
             display: "flex",
-            flexWrap: { xs: "wrap", md: "nowrap" }, // Stack items on small screens
+            flexWrap: { xs: "wrap", md: "nowrap" },
             alignItems: "center",
             justifyContent: "space-between",
             gap: 2,
@@ -216,7 +216,6 @@ const ExploreTourPage = () => {
                   },
                 }}
               >
-                {/* Placeholder MenuItem */}
                 {!priceRange && (
                   <MenuItem disabled value="">
                     Choose Here

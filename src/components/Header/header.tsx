@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header-container">
+    <div className="main-header-container">
       <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
         <img className="logo-header" src={logo} alt="Logo Tour-bay" />
       </Link>
@@ -24,7 +24,7 @@ const Header = () => {
       <Box className="header-inner-container">
         <Link
           to={"/tours"}
-          className={`menu-link ${
+          className={`header-menu-link ${
             location.pathname === "/tours" ? "active" : ""
           }`}
         >
@@ -32,7 +32,7 @@ const Header = () => {
         </Link>
         <Link
           to={"/add-tour"}
-          className={`menu-link ${
+          className={`header-menu-link ${
             location.pathname === "/add-tour" ? "active" : ""
           }`}
         >
@@ -40,7 +40,7 @@ const Header = () => {
         </Link>
         <Link
           to={"/my-tours"}
-          className={`menu-link ${
+          className={`header-menu-link ${
             location.pathname === "/my-tours" ? "active" : ""
           }`}
         >
@@ -68,7 +68,7 @@ const Header = () => {
         <MenuIcon />
       </IconButton>
 
-      {/* Mobile Drawer */}
+      {/* Small Screen Drawer */}
       <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu}>
         <Box className="drawer-container">
           <IconButton
@@ -83,7 +83,7 @@ const Header = () => {
             <ListItem>
               <Link
                 to={"/tours"}
-                className={`menu-link ${
+                className={`header-menu-link ${
                   location.pathname === "/tours" ? "active" : ""
                 }`}
                 onClick={toggleMenu}
@@ -94,7 +94,7 @@ const Header = () => {
             <ListItem>
               <Link
                 to={"/add-tour"}
-                className={`menu-link ${
+                className={`header-menu-link ${
                   location.pathname === "/add-tour" ? "active" : ""
                 }`}
                 onClick={toggleMenu}
@@ -105,7 +105,7 @@ const Header = () => {
             <ListItem>
               <Link
                 to={"/my-tours"}
-                className={`menu-link ${
+                className={`header-menu-link ${
                   location.pathname === "/my-tours" ? "active" : ""
                 }`}
                 onClick={toggleMenu}

@@ -9,7 +9,6 @@ import MyTours from "./pages/MyTours/MyTours";
 import TourDetail from "./pages/TourDetail/TourDetail";
 import Tours from "./pages/Tours/Tours";
 
-// Create a theme with Poppins as the font
 const theme = createTheme({
   typography: {
     fontFamily: '"Poppins", sans-serif',

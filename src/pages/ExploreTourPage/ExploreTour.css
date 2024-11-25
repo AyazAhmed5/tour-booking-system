@@ -14,10 +14,10 @@
 }
 .explore-page-container {
   display: flex;
-  flex-direction: column; /* Stack the top and bottom sections */
-  justify-content: space-between; /* Push bottom-container to the bottom */
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  height: 80vh; /* Ensure the container spans the full viewport height */
+  height: 80vh;
   position: relative;
 }
 
@@ -30,12 +30,12 @@
 
 @media (max-width: 900px) {
   .explore-page-container {
-    height: 90vh; /* Ensure the container spans the full viewport height */
+    height: 90vh;
   }
 }
 @media (max-width: 600px) {
   .explore-page-container {
-    height: 110vh; /* Ensure the container spans the full viewport height */
+    height: 110vh;
   }
 }
 
@@ -53,5 +53,8 @@
   }
   .button-search {
     width: 100%;
+  }
+  .outer-wrapperr {
+    height: 60%;
   }
 }
