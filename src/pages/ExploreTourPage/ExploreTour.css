@@ -38,3 +38,20 @@
     height: 110vh; /* Ensure the container spans the full viewport height */
   }
 }
+
+.css-iwtkcv-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
+  background-color: #f16b5133 !important;
+}
+@media (max-width: 700px) {
+  .location-date-box {
+    width: 100%;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+  .middle-container {
+    flex-direction: column;
+  }
+  .button-search {
+    width: 100%;
+  }
+}
