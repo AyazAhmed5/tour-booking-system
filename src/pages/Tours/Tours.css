@@ -92,7 +92,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     margin-bottom: 20px;
   }
   .tours-header p {
@@ -106,7 +106,7 @@
 
 @media (max-width: 400px) {
   .tours-header {
-    width: 100%;
+    width: 80%;
   }
   .tours-header p {
     font-size: 20px;
