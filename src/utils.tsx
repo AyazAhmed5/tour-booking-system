@@ -1,9 +1,9 @@
-import PerezArtMuseam from "./assets/Perez-museam.png";
-import HardRockStadium from "./assets/HardRock Stadium.png";
-import MathesonHammockPark from "./assets/Matheson Hammock Park.png";
-import TheWharfMuseam from "./assets/The Whard Miami.png";
-import MiamiTower from "./assets/Miami Tower.png";
-import SkyviewMiami from "./assets/Skyviews Miami.png";
+import PerezArtMuseam from "./assets/images/Perez-museam.png";
+import HardRockStadium from "./assets/images/HardRock Stadium.png";
+import MathesonHammockPark from "./assets/images/Matheson Hammock Park.png";
+import TheWharfMuseam from "./assets/images/The Whard Miami.png";
+import MiamiTower from "./assets/images/Miami Tower.png";
+import SkyviewMiami from "./assets/images/Skyviews Miami.png";
 
 interface Tour {
   id: string;

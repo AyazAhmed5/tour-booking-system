@@ -9,7 +9,7 @@ import {
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import bookingPageImage from "../../assets/booking-page-image.svg";
+import bookingPageImage from "../../assets/images/booking-page-image.svg";
 import "./AddTour.css";
 
 const validationSchema = yup.object({

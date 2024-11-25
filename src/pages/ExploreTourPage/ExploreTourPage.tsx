@@ -11,9 +11,9 @@ import {
   Typography,
 } from "@mui/material";
 import "./ExploreTour.css";
-import searchIcon from "../../assets/search-icon.svg";
-import locationIcon from "../../assets/location-icon.svg";
-import priceIcon from "../../assets/price-icon.svg";
+import searchIcon from "../../assets/images/search-icon.svg";
+import locationIcon from "../../assets/images/location-icon.svg";
+import priceIcon from "../../assets/images/price-icon.svg";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import { useState } from "react";
 import { popularDestinations, priceRanges } from "../../utils";

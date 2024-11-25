@@ -3,7 +3,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import "./Tours.css";
 
 import { toursData } from "../../utils";
-import noDataFound from "../../assets/no-data-found.svg";
+import noDataFound from "../../assets/images/no-data-found.svg";
 import TourCard from "./TourCard";
 
 const Tours = () => {

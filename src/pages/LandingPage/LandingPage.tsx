@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import Defaultbutton from "../../components/DefaultButton/DefaultButton";
 import { Link } from "react-router-dom";
-import image1 from "../../assets/image-1.svg";
-import image2 from "../../assets/image-2.svg";
-import image3 from "../../assets/image-3.svg";
+import image1 from "../../assets/images/image-1.svg";
+import image2 from "../../assets/images/image-2.svg";
+import image3 from "../../assets/images/image-3.svg";
 import "./LandingPage.css";
 const LandingPage = () => {
   return (
