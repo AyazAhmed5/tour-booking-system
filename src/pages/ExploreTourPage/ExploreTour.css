@@ -1,65 +1,40 @@
+.outer-wrapperr {
+  background-image: url("../../assets/bgExploreTour.svg");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .explore-page-container {
   display: flex;
+  flex-direction: column; /* Stack the top and bottom sections */
+  justify-content: space-between; /* Push bottom-container to the bottom */
   align-items: center;
-  justify-content: center;
-  background-color: black;
-}
-
-.middle-container {
-  display: grid;
-  grid-template-columns: 30% 30% 30% 10%;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
-  height: 139px;
-  position: absolute;
-  bottom: 40%;
-  border-radius: 12px !important;
-}
-
-.middle-container-text {
-  font-weight: 600 !important;
-  font-size: 20px !important;
-  line-height: 30px !important;
-  width: 100% !important;
-}
-.middle-secondary-text {
-  color: #999999;
-  margin-left: 40px !important;
-}
-
-.button-search {
-  width: 54px;
-  height: 95px;
-  border-radius: 15px !important;
-  background-color: #f16b51 !important;
-}
-.price-range {
-  display: flex;
-  flex-direction: row;
-}
-
-.bottom-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  bottom: 13%;
+  height: 80vh; /* Ensure the container spans the full viewport height */
+  position: relative;
 }
 
 .chip-design {
   border: 1px solid #e1e1e1 !important;
   border-radius: 12px !important;
-  min-height: 50px;
-  font-size: 20px !important;
+  min-height: 30px;
+  font-size: 20px;
 }
-.css-iwtkcv-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
-  background-color: #f16b5133 !important; /* Fully opaque orange */
+
+@media (max-width: 900px) {
+  .explore-page-container {
+    height: 90vh; /* Ensure the container spans the full viewport height */
+  }
 }
-.select-text {
-  font-weight: 400 !important;
-  color: #505050 !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
+@media (max-width: 600px) {
+  .explore-page-container {
+    height: 110vh; /* Ensure the container spans the full viewport height */
+  }
 }
