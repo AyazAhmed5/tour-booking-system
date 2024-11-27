@@ -23,6 +23,12 @@
   gap: 20px;
   padding: 50px;
 }
+.tours-header-buttons-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
 
 .card-lower-container {
   display: flex;

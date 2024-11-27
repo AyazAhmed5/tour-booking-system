@@ -5,7 +5,7 @@ import TheWharfMuseam from "./assets/images/The Whard Miami.png";
 import MiamiTower from "./assets/images/Miami Tower.png";
 import SkyviewMiami from "./assets/images/Skyviews Miami.png";
 
-interface Tour {
+export interface TourType {
   id: string;
   tourLocation: string;
   imgSource: string;
@@ -14,12 +14,11 @@ interface Tour {
   tourDescription2: string;
   tourCost: string;
   tourDuration: string;
+  startDate: string;
+  endDate: string;
 }
 
-// export const toursData: Tour[] = [];
-
-// Use the interface with the toursData array
-export const toursData: Tour[] = [
+export const toursData: TourType[] = [
   {
     id: "1",
     tourLocation: "Perez Art Museam Miami",
@@ -30,8 +29,10 @@ export const toursData: Tour[] = [
       "Visitors can explore immersive exhibitions and enjoy stunning views of Biscayne Bay from the outdoor terraces. The museum also offers a peaceful environment to relax and soak in the creative ambiance. This iconic stadium is the proud home of the Miami Dolphins and the Miami Hurricanes, offering fans an unparalleled experience with its modern amenities.",
     tourDescription2:
       "Don't miss the sculpture garden and the gift shop featuring unique art-inspired merchandise. This destination is perfect for art enthusiasts and families alike. The sculpture garden and cozy gift shop offer a delightful experience for visitors, making this destination perfect for a day filled with creativity and relaxation.",
-    tourCost: "$50-$200",
+    tourCost: "$200-$400",
     tourDuration: "3 Days",
+    startDate: "2024-12-01",
+    endDate: "2024-12-03",
   },
   {
     id: "2",
@@ -45,6 +46,8 @@ export const toursData: Tour[] = [
       "With its state-of-the-art amenities and vibrant environment, it's a must-visit spot for sports fans and entertainment lovers. The climate-controlled glass gondolas provide a comfortable ride as you take in stunning vistas, making it a must-visit for photographers and sightseers.",
     tourCost: "$50-$200",
     tourDuration: "1 Day",
+    startDate: "2024-12-01",
+    endDate: "2024-12-03",
   },
   {
     id: "3",
@@ -56,8 +59,10 @@ export const toursData: Tour[] = [
       "The park features a man-made atoll pool that is flushed naturally with tidal action from Biscayne Bay, creating a perfect spot for swimming and picnicking.",
     tourDescription2:
       "Visitors can also enjoy scenic walking trails, marina access, and breathtaking sunset views, making it an excellent destination for nature lovers. The climate-controlled glass gondolas provide a comfortable ride as you take in stunning vistas, making it a must-visit for photographers and sightseers.",
-    tourCost: "$50-$80",
+    tourCost: "$50-$200",
     tourDuration: "2 Days",
+    startDate: "2024-12-01",
+    endDate: "2024-12-03",
   },
   {
     id: "4",
@@ -69,8 +74,10 @@ export const toursData: Tour[] = [
       "This trendy spot features local food trucks, craft cocktails, and riverside seating, creating an unforgettable ambiance for both daytime and evening gatherings. This iconic stadium is the proud home of the Miami Dolphins and the Miami Hurricanes, offering fans an unparalleled experience with its modern amenities.",
     tourDescription2:
       "Perfect for socializing, dancing, and enjoying the Miami skyline, The Wharf is a great destination for anyone looking for a fun and memorable experience. The climate-controlled glass gondolas provide a comfortable ride as you take in stunning vistas, making it a must-visit for photographers and sightseers.",
-    tourCost: "$50-$100",
+    tourCost: "$600-$800",
     tourDuration: "4 Days",
+    startDate: "2024-12-01",
+    endDate: "2024-12-03",
   },
   {
     id: "5",
@@ -82,8 +89,10 @@ export const toursData: Tour[] = [
       "It features a sophisticated lighting system that displays mesmerizing light shows, making it one of Miami's most photographed landmarks. The climate-controlled glass gondolas provide a comfortable ride as you take in stunning vistas, making it a must-visit for photographers and sightseers.",
     tourDescription2:
       "Inside, the tower offers premium office spaces, dining options, and panoramic views of the city skyline, making it a unique attraction for visitors. The climate-controlled glass gondolas provide a comfortable ride as you take in stunning vistas, making it a must-visit for photographers and sightseers.",
-    tourCost: "$50-$150",
-    tourDuration: "2 Days",
+    tourCost: "$200-$400",
+    tourDuration: "3 Days",
+    startDate: "2024-12-01",
+    endDate: "2024-12-03",
   },
   {
     id: "6",
@@ -97,15 +106,17 @@ export const toursData: Tour[] = [
       "With its convenient location and stunning vistas, Skyviews Miami is an ideal attraction for couples, families, and adventurers alike. The climate-controlled glass gondolas provide a comfortable ride as you take in stunning vistas, making it a must-visit for photographers and sightseers.",
     tourCost: "$50-$200",
     tourDuration: "2 Days",
+    startDate: "2024-12-01",
+    endDate: "2024-12-03",
   },
 ];
 export const priceRanges = [
-  { value: "50-200", label: "$50 - $200" },
-  { value: "200-400", label: "$200 - $400" },
-  { value: "400-600", label: "$400 - $600" },
-  { value: "600-800", label: "$600 - $800" },
-  { value: "800-1000", label: "$800 - $1000" },
-  { value: "1000+", label: "$1000 Above" },
+  { value: "$50-$200", label: "$50 - $200" },
+  { value: "$200-$400", label: "$200 - $400" },
+  { value: "$400-$600", label: "$400 - $600" },
+  { value: "$600-$800", label: "$600 - $800" },
+  { value: "$800-$1000", label: "$800 - $1000" },
+  { value: "$1000+", label: "$1000 Above" },
 ];
 
 export const popularDestinations = [

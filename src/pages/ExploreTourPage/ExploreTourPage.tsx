@@ -17,12 +17,26 @@ import priceIcon from "../../assets/images/price-icon.svg";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import { useState } from "react";
 import { popularDestinations, priceRanges } from "../../utils";
+import { useDispatch } from "react-redux";
+import { setSearchQuery } from "../../store/user/user.slice";
+import { Link } from "react-router-dom";
 
 const ExploreTourPage = () => {
   const [priceRange, setPriceRange] = useState<string>("");
+  const dispatch = useDispatch();
 
   const handlePriceChange = (event: SelectChangeEvent<string>) => {
     setPriceRange(event.target.value);
+  };
+
+  const searchButtonHandler = () => {
+    dispatch(
+      setSearchQuery({
+        priceRange: priceRange,
+        startDate: "2024-12-01",
+        endDate: "2024-12-03",
+      })
+    );
   };
 
   return (
@@ -155,34 +169,45 @@ const ExploreTourPage = () => {
           </Box>
 
           {/* Search Button */}
-          <Button
-            className="button-search"
-            sx={{
-              minWidth: "54px",
-              height: "74px",
-              backgroundColor: "#F16B51",
-              borderRadius: "12px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              "&:hover": {
-                backgroundColor: "#e95b45",
-              },
-            }}
-          >
-            <img
-              src={searchIcon}
-              alt="Search Icon"
-              style={{ width: "24px", height: "24px" }}
-            />
-          </Button>
+          <Link to={priceRange ? "/tours" : "#"}>
+            <Button
+              className="button-search"
+              onClick={(event) => {
+                if (!priceRange) {
+                  event.preventDefault();
+                } else {
+                  searchButtonHandler();
+                }
+              }}
+              disabled={!priceRange}
+              sx={{
+                minWidth: "54px",
+                height: "74px",
+                backgroundColor: "#F16B51",
+                borderRadius: "12px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                "&:hover": {
+                  backgroundColor: "#e95b45",
+                },
+              }}
+            >
+              <img
+                src={searchIcon}
+                alt="Search Icon"
+                style={{ width: "24px", height: "24px" }}
+              />
+            </Button>
+          </Link>
         </Paper>
+        {/*Popular search*/}
         <Box className="bottom-container">
           <Typography
             sx={{
               fontWeight: 600,
-              fontSize: { xs: "14px", sm: "16px", md: "20px" },
-              lineHeight: { xs: "24px", sm: "28px", md: "32px" },
+              fontSize: { xs: "16px", sm: "16px", md: "20px" },
+              lineHeight: { xs: "40px", sm: "28px", md: "32px" },
               textAlign: "center",
             }}
           >

@@ -15,9 +15,9 @@
   flex: 1;
 }
 .form-title {
-  font-weight: 600;
+  font-weight: 600 !important;
   color: #202445;
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
 }
 
 .form-confirm-button {

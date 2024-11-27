@@ -74,7 +74,7 @@ const TourCard: React.FC<TourCardProps> = ({
           </Box>
         </Box>
         <Box className="buttons-icon">
-          {location.pathname === "/my-tours" ? (
+          {location.pathname === "/tours" ? (
             <Link
               to={`/tour-detail/${id}`}
               style={{ display: "inline-block", width: "100%" }}
@@ -94,12 +94,17 @@ const TourCard: React.FC<TourCardProps> = ({
                 src={DeleteIcon}
                 alt=""
               />
-              <Defaultbutton
-                buttonCaption="Details"
-                buttonWidth="155px"
-                buttonHeight="54px"
-                route="/"
-              />
+              <Link
+                to={`/tour-detail/${id}`}
+                style={{ display: "inline-block" }}
+              >
+                <Defaultbutton
+                  buttonCaption="Details"
+                  buttonWidth="155px"
+                  buttonHeight="54px"
+                  route="/"
+                />
+              </Link>
               <Defaultbutton
                 buttonCaption="Update"
                 buttonWidth="155px"
@@ -115,6 +120,7 @@ const TourCard: React.FC<TourCardProps> = ({
           tourName={tourLocation}
           tourRemainingDays={tourDuration}
           onCloseHandler={onCloseClickHandler}
+          tourId={id}
         />
       )}
     </Paper>

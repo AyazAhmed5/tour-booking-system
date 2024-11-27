@@ -1,6 +1,5 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./TourDetail.css";
-import { toursData } from "../../utils";
 import { Box, Typography } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import locationIcon from "../../assets/images/location-icon.svg";
@@ -12,10 +11,14 @@ import smallImage4 from "../../assets/images/small-image-4.png";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import CloudQueueOutlinedIcon from "@mui/icons-material/CloudQueueOutlined";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/root-reducer";
 
 const TourDetail = () => {
   const { id } = useParams();
-  const currentTour = toursData[Number(id) - 1];
+  const tours = useSelector((state: RootState) => state.tour.tours);
+
+  const currentTour = tours[Number(id) - 1];
   return (
     <div className="details-main-container">
       <Typography className="details-heder-text">
@@ -191,9 +194,11 @@ const TourDetail = () => {
           </Box>
         </Box>
 
-        <Box className="book-now-container">
-          <button>Book Now</button>
-        </Box>
+        <Link to={"/add-tour"}>
+          <Box className="book-now-container">
+            <button>Book Now</button>
+          </Box>
+        </Link>
       </Box>
     </div>
   );

@@ -2,27 +2,61 @@ import { Box, Button, Typography } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import "./Tours.css";
 
-import { toursData } from "../../utils";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/root-reducer";
+
 import noDataFound from "../../assets/images/no-data-found.svg";
 import TourCard from "./TourCard";
+import { setSearchQuery } from "../../store/user/user.slice";
 
 const Tours = () => {
+  const dispatch = useDispatch();
+
+  const tours = useSelector((state: RootState) => state.tour.tours);
+  const searchQuery = useSelector((state: RootState) => state.user.searchQuery);
+  let fileteredTours = tours;
+
+  if (searchQuery) {
+    fileteredTours = tours.filter(
+      (tour) =>
+        tour.startDate === searchQuery?.startDate &&
+        tour.endDate === searchQuery?.endDate &&
+        tour.tourCost === searchQuery?.priceRange
+    );
+  }
+
+  const clearSearchHandler = () => {
+    dispatch(setSearchQuery(null));
+  };
+
   return (
     <>
       <div>
         <Box className="tours-header">
           <Typography>Top Destinations At “Miami”</Typography>
-          <Button
-            variant="outlined"
-            className="tours-header-button"
-            startIcon={<FilterListIcon />}
-          >
-            Filters
-          </Button>
+          <Box className="tours-header-buttons-box">
+            {searchQuery && (
+              <Button
+                onClick={clearSearchHandler}
+                variant="outlined"
+                className="tours-header-button"
+                startIcon={<FilterListIcon />}
+              >
+                Clear Search
+              </Button>
+            )}
+            <Button
+              variant="outlined"
+              className="tours-header-button"
+              startIcon={<FilterListIcon />}
+            >
+              Filters
+            </Button>
+          </Box>
         </Box>
-        {toursData.length ? (
+        {fileteredTours.length ? (
           <Box className="tours-images-container">
-            {toursData.map((tour) => (
+            {fileteredTours.map((tour) => (
               <TourCard
                 key={tour.id}
                 id={tour.id}

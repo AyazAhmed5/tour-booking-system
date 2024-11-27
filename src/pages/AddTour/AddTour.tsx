@@ -11,6 +11,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import bookingPageImage from "../../assets/images/booking-page-image.svg";
 import "./AddTour.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addBooking } from "../../store/user/user.slice";
+import { RootState } from "../../store/root-reducer";
 
 const validationSchema = yup.object({
   name: yup
@@ -54,14 +57,32 @@ const AddTour = () => {
     resolver: yupResolver(validationSchema),
     mode: "onChange",
   });
+  const dispatch = useDispatch();
+  const tours = useSelector((state: RootState) => state.tour.tours);
 
   const onSubmit = (data: any) => {
+    if (tours.length === 0) {
+      alert("No tours available.");
+      return;
+    }
+
+    const randomTour = tours[Math.floor(Math.random() * tours.length)];
+    const booking = {
+      ...data,
+      tourId: randomTour.id,
+    };
+
+    const availableTourIds = tours.map((tour) => tour.id);
+
+    dispatch(
+      addBooking({
+        ...booking,
+        availableTourIds,
+      })
+    );
+
     alert(
-      `Booking Confirmed!\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${
-        data.phone
-      }\nAdults: ${data.adults}\nChildren: ${
-        data.children || 0
-      }\nPayment Method: ${data.paymentMethod}`
+      `Booking Confirmed!\n \n You Can See Booked Tours by clicking 'MY Tours' above`
     );
     reset();
   };

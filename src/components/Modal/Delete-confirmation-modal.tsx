@@ -3,19 +3,28 @@ import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import "./Delete-confirmation-modal.css";
+import { deleteTour } from "../../store/user/user.slice";
+import { useDispatch } from "react-redux";
 
 interface DeleteConfirmationModalProps {
   onCloseHandler: () => void;
   tourName: string;
   tourRemainingDays: string;
+  tourId: string;
 }
 
 export default function DeleteConfirmationModal({
   onCloseHandler,
   tourName,
   tourRemainingDays,
+  tourId,
 }: DeleteConfirmationModalProps) {
-  const allowDeletion = ["2 Days", "1 Day", "3 Days"];
+  const dispatch = useDispatch();
+  const allowDeletion = ["1 Day", "2 Days"];
+
+  const deleteHandler = (tourId: string) => {
+    dispatch(deleteTour(tourId));
+  };
   return (
     <Modal
       keepMounted
@@ -61,7 +70,9 @@ export default function DeleteConfirmationModal({
           {!allowDeletion.includes(tourRemainingDays) && (
             <Button
               variant="outlined"
-              onClick={onCloseHandler}
+              onClick={() => {
+                deleteHandler(tourId);
+              }}
               className="delete-button"
             >
               Delete
