@@ -4,6 +4,7 @@ import MathesonHammockPark from "./assets/images/Matheson Hammock Park.png";
 import TheWharfMuseam from "./assets/images/The Whard Miami.png";
 import MiamiTower from "./assets/images/Miami Tower.png";
 import SkyviewMiami from "./assets/images/Skyviews Miami.png";
+import * as yup from "yup";
 
 export interface TourType {
   id: string;
@@ -136,3 +137,35 @@ export const popularDestinations = [
   "Lisbon",
   "New Orleans",
 ];
+
+export const validationSchema = yup.object({
+  name: yup
+    .string()
+    .required("Name is required")
+    .matches(
+      /^[A-Za-z\s-]+$/,
+      "Name can only contain alphabets, spaces, and hyphens"
+    )
+    .max(50, "Name cannot exceed 50 characters"),
+  email: yup
+    .string()
+    .required("Email is required")
+    .email("Invalid email format"),
+  phone: yup
+    .string()
+    .required("Phone number is required")
+    .matches(/^\d{11}$/, "Phone number must be 11 digits"),
+  adults: yup
+    .number()
+    .required("Number of adults is required")
+    .min(1, "At least 1 adult is required")
+    .max(9, "Maximum 9 adults"),
+  children: yup
+    .number()
+    .min(0, "Number of children cannot be negative")
+    .max(9, "Maximum 9 children"),
+  paymentMethod: yup
+    .string()
+    .required("Payment method is required")
+    .oneOf(["mastercard", "visa"], "Invalid payment method"),
+});

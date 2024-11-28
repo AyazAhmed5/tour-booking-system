@@ -21,7 +21,7 @@
 }
 
 .form-confirm-button {
-  background-color: #ff6347;
+  background-color: #ff6347 !important;
   width: 77%;
   color: white;
   border-radius: 12px !important;

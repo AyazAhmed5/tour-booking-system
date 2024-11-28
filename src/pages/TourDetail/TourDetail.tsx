@@ -17,8 +17,14 @@ import { RootState } from "../../store/root-reducer";
 const TourDetail = () => {
   const { id } = useParams();
   const tours = useSelector((state: RootState) => state.tour.tours);
+  const bookings = useSelector((state: RootState) => state.user.bookings);
 
   const currentTour = tours[Number(id) - 1];
+
+  const alreadyBooked = bookings.find(
+    (booking) => booking.tourId === currentTour.id
+  );
+  console.log(alreadyBooked);
   return (
     <div className="details-main-container">
       <Typography className="details-heder-text">
@@ -194,9 +200,11 @@ const TourDetail = () => {
           </Box>
         </Box>
 
-        <Link to={"/add-tour"}>
+        <Link to={`/add-tour/${currentTour.id}`}>
           <Box className="book-now-container">
-            <button>Book Now</button>
+            <button disabled={alreadyBooked ? true : false}>
+              {alreadyBooked ? "Already Booked!!!" : "Book Now"}
+            </button>
           </Box>
         </Link>
       </Box>

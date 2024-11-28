@@ -24,7 +24,9 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/explore-tour" element={<ExploreTourPage />} />
+        <Route path="/add-tour/:id" element={<AddTour />} />
         <Route path="/add-tour" element={<AddTour />} />
+        <Route path="/update-tour/:id" element={<AddTour />} />
         <Route path="/my-tours" element={<MyTours />} />
         <Route path="/tours" element={<Tours />} />
         <Route path="/tour-detail/:id" element={<TourDetail />} />

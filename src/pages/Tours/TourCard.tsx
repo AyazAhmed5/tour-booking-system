@@ -105,12 +105,17 @@ const TourCard: React.FC<TourCardProps> = ({
                   route="/"
                 />
               </Link>
-              <Defaultbutton
-                buttonCaption="Update"
-                buttonWidth="155px"
-                buttonHeight="54px"
-                route="/"
-              />
+              <Link
+                to={`/update-tour/${id}`}
+                style={{ display: "inline-block" }}
+              >
+                <Defaultbutton
+                  buttonCaption="Update"
+                  buttonWidth="155px"
+                  buttonHeight="54px"
+                  route="/"
+                />
+              </Link>
             </>
           )}
         </Box>

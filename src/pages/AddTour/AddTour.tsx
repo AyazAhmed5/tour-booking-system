@@ -8,44 +8,14 @@ import {
 } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import bookingPageImage from "../../assets/images/booking-page-image.svg";
 import "./AddTour.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addBooking } from "../../store/user/user.slice";
+import { addBooking, updateBooking } from "../../store/user/user.slice";
 import { RootState } from "../../store/root-reducer";
-
-const validationSchema = yup.object({
-  name: yup
-    .string()
-    .required("Name is required")
-    .matches(
-      /^[A-Za-z\s-]+$/,
-      "Name can only contain alphabets, spaces, and hyphens"
-    )
-    .max(50, "Name cannot exceed 50 characters"),
-  email: yup
-    .string()
-    .required("Email is required")
-    .email("Invalid email format"),
-  phone: yup
-    .string()
-    .required("Phone number is required")
-    .matches(/^\d{11}$/, "Phone number must be 11 digits"),
-  adults: yup
-    .number()
-    .required("Number of adults is required")
-    .min(1, "At least 1 adult is required")
-    .max(9, "Maximum 9 adults"),
-  children: yup
-    .number()
-    .min(0, "Number of children cannot be negative")
-    .max(9, "Maximum 9 children"),
-  paymentMethod: yup
-    .string()
-    .required("Payment method is required")
-    .oneOf(["mastercard", "visa"], "Invalid payment method"),
-});
+import { useParams, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { validationSchema } from "../../utils";
 
 const AddTour = () => {
   const {
@@ -53,12 +23,48 @@ const AddTour = () => {
     handleSubmit,
     formState: { errors, isValid },
     reset,
+    watch,
   } = useForm({
     resolver: yupResolver(validationSchema),
     mode: "onChange",
   });
+
   const dispatch = useDispatch();
+  const location = useLocation();
   const tours = useSelector((state: RootState) => state.tour.tours);
+  const bookings = useSelector((state: RootState) => state.user.bookings);
+  const { id: routerTourId } = useParams();
+
+  const isUpdating =
+    Boolean(routerTourId) && location.pathname.includes(`/update-tour`);
+
+  useEffect(() => {
+    reset();
+    if (isUpdating) {
+      const bookingToEdit = bookings.find(
+        (booking) => booking.tourId === routerTourId
+      );
+      if (bookingToEdit) {
+        reset({
+          name: bookingToEdit.name,
+          email: bookingToEdit.email,
+          phone: bookingToEdit.phone,
+          adults: bookingToEdit.adults,
+          children: bookingToEdit.children,
+          paymentMethod: bookingToEdit.paymentMethod,
+        });
+      }
+    } else {
+      reset({
+        name: "",
+        email: "",
+        phone: "",
+        adults: 1,
+        children: 0,
+        paymentMethod: "",
+      });
+    }
+  }, [isUpdating, routerTourId, bookings, reset, location.pathname]);
 
   const onSubmit = (data: any) => {
     if (tours.length === 0) {
@@ -69,21 +75,30 @@ const AddTour = () => {
     const randomTour = tours[Math.floor(Math.random() * tours.length)];
     const booking = {
       ...data,
-      tourId: randomTour.id,
+      tourId: routerTourId ? routerTourId : randomTour.id,
     };
 
     const availableTourIds = tours.map((tour) => tour.id);
 
-    dispatch(
-      addBooking({
-        ...booking,
-        availableTourIds,
-      })
-    );
+    if (isUpdating) {
+      dispatch(
+        updateBooking({
+          ...booking,
+          tourId: routerTourId,
+        })
+      );
+      alert("Booking updated successfully!");
+    } else {
+      dispatch(
+        addBooking({
+          ...booking,
+          availableTourIds,
+          routerTourId,
+        })
+      );
+      alert("Booking confirmed!");
+    }
 
-    alert(
-      `Booking Confirmed!\n \n You Can See Booked Tours by clicking 'MY Tours' above`
-    );
     reset();
   };
 
@@ -98,11 +113,11 @@ const AddTour = () => {
             lineHeight: { xs: "36px", sm: "48px", md: "60px" },
           }}
         >
-          Confirm Your Booking
+          {isUpdating ? "Update Your Booking" : "Confirm Your Booking"}
         </Typography>
 
         <form className="form-fields" onSubmit={handleSubmit(onSubmit)}>
-          {/* Name Field */}
+          {/* Form fields */}
           <Box className="form-group">
             <label htmlFor="name" className="form-label">
               Name
@@ -184,14 +199,15 @@ const AddTour = () => {
 
           {/* Payment Method */}
           <Box className="form-group">
-            <label htmlFor="payment-method" className="form-label">
+            <label htmlFor="paymentMethod" className="form-label">
               Payment Method
             </label>
             <FormControl>
               <Select
-                id="payment-method"
+                id="paymentMethod"
                 defaultValue=""
                 className="form-select"
+                value={watch("paymentMethod") || ""}
                 {...register("paymentMethod")}
                 sx={{
                   "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
@@ -205,8 +221,12 @@ const AddTour = () => {
                 <MenuItem value="" disabled>
                   Select payment method
                 </MenuItem>
-                <MenuItem value="mastercard">MasterCard</MenuItem>
-                <MenuItem value="visa">Visa</MenuItem>
+                <MenuItem id="paymentMethod" value="mastercard">
+                  MasterCard
+                </MenuItem>
+                <MenuItem id="paymentMethod" value="visa">
+                  Visa
+                </MenuItem>
               </Select>
             </FormControl>
             {errors.paymentMethod && (
@@ -221,7 +241,7 @@ const AddTour = () => {
             className="form-confirm-button"
             disabled={!isValid}
           >
-            Confirm
+            {isUpdating ? "Update Booking" : "Confirm"}
           </Button>
         </form>
       </Box>
